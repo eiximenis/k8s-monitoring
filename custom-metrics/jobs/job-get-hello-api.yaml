@@ -1,0 +1,16 @@
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: helloapitest
+spec:
+  ttlSecondsAfterFinished: 100
+  template:
+    spec:
+      containers:
+      - name: helloapitest
+        image: peterevans/vegeta:6.9.1
+        command:
+        - "sh"
+        - "-c"
+        - "echo 'GET http://hellomonitor.hellomonitor/forecasts' | vegeta attack -rate=10 -duration=30s"
+      restartPolicy: Never

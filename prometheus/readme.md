@@ -200,4 +200,3 @@ Once applied **go to the folder `/prometheus/k8s/operator-crds`** and apply the 
 ```
 kubectl apply -f 04-smon-api-server.yaml -n monitoring
 ``` 
-
