@@ -1,0 +1,10 @@
+{
+  "profiles": {
+    "ConsoleClient": {
+      "commandName": "Project",
+      "environmentVariables": {
+        "ApiUrl": "http://localhost:5292"
+      }
+    }
+  }
+}

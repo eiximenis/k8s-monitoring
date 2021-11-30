@@ -1,0 +1,33 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: hellomonitor
+spec:
+  selector:
+    matchLabels:
+      app: hellomonitor
+  template:
+    metadata:
+      labels:
+        app: hellomonitor
+    spec:
+      initContainers:
+      - name: seed
+        image: hellomonitor
+        envFrom:
+          - configMapRef:
+              name: hello-cfg
+        args:
+          - "/seed"
+      containers:
+      - name: api
+        image: hellomonitor
+        resources:
+          limits:
+            memory: "256Mi"
+            cpu: "250m"
+        envFrom:
+          - configMapRef:
+              name: hello-cfg
+        ports:
+        - containerPort: 80

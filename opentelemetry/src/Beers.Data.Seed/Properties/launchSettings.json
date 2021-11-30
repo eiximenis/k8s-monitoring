@@ -1,0 +1,10 @@
+{
+  "profiles": {
+    "Beers.Data.Seed": {
+      "commandName": "Project"
+    },
+    "Docker": {
+      "commandName": "Docker"
+    }
+  }
+}

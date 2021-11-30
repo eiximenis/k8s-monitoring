@@ -1,0 +1,14 @@
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+resources:
+- deploy-hello.yaml
+- svc-hello.yaml
+namespace: hellomonitor
+images:
+- name: hellomonitor
+  newName: dockercampusmvp/monitor-api
+  # newName: Put your image name here
+configMapGenerator:
+- literals:
+  - pgsql__constr=Host=pgsql;Database=hellodb;Username=hellouser;Password=Passw0rd!
+  name: hello-cfg

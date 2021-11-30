@@ -1,0 +1,25 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: pgsql
+spec:
+  selector:
+    matchLabels:
+      app: pgsql
+  template:
+    metadata:
+      labels:
+        app: pgsql
+    spec:
+      containers:
+      - name: pgsql
+        image: postgres:14.1
+        resources:
+          limits:
+            memory: "256Mi"
+            cpu: "256m"
+        envFrom:
+        - configMapRef:
+            name: pgsql-cfg
+        ports:
+        - containerPort: 5432

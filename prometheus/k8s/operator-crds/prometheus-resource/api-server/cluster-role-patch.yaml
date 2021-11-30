@@ -1,0 +1,7 @@
+- op: add
+  path: rules
+  value:
+  - nonResourceURLs:
+    - /metrics
+    verbs:
+    - get
