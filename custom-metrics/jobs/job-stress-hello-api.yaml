@@ -3,7 +3,7 @@ kind: Job
 metadata:
   name: helloapistress
 spec:
-  ttlSecondsAfterFinished: 1001
+  ttlSecondsAfterFinished: 100
   completions: 20
   parallelism: 10
   template:

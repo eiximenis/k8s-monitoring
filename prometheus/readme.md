@@ -165,7 +165,7 @@ kubectl apply -f 02-smon-node-exporter.yaml -n monitoring
 Let's deploy [kube-state-metrics](https://github.com/kubernetes/kube-state-metrics) which is another project that generate metrics about the state of kubernetes objects like pods, deployments, services and so on. To install it, we can use Helm because there is an [official Helm chart](https://artifacthub.io/packages/helm/prometheus-community/kube-state-metrics/):
 
 ```
-helm install kube-state-metrics prometheus-community/kube-state-metrics -n monitoring
+type
 ```
 
 Helm chart created a service named `kube-state-metrics` in the namespace `monitoring`, so final step is to add an additional `ServiceMonitor` to scrape this new metrics endpoint.

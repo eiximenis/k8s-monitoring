@@ -1,4 +1,4 @@
-- op: add
+- op: delete
   path: rules
   value:
   - nonResourceURLs:
